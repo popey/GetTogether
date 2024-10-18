@@ -1,10 +1,10 @@
-# Get Together
+# Get Together fork
 
 [![Build Status](https://travis-ci.org/GetTogetherComm/GetTogether.svg?branch=master)](https://travis-ci.org/GetTogetherComm/GetTogether)
 
 Get Together is an open source event manager for local communities.
 
-Try it free at <https://gettogether.community>
+Try it free at <https://gettogether.popey.com>
 
 ## Goals
 
