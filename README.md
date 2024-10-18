@@ -93,12 +93,6 @@ Pre-commit is a tool that helps us commiting better code. Before writing any cod
 pre-commit install
 ```
 
-- If you're in Windows:
-
-```bash
-./env/Scripts/pre-commit install
-```
-
 From now on everytime you commit some code this will be checked by our pre-commit hooks.
 
 ### Code formatters
@@ -130,7 +124,7 @@ file from GeoNames, and load it:
 
 ```bash
 wget https://download.geonames.org/export/dump/countryInfo.txt
-./env/bin/python manage.py load_countries countryInfo.txt
+python manage.py load_countries countryInfo.txt
 ```
 
 #### SPR
@@ -140,7 +134,7 @@ file from GeoNames, then run:
 
 ```bash
 wget https://download.geonames.org/export/dump/admin1CodesASCII.txt
-./env/bin/python manage.py load_spr admin1CodesASCII.txt
+/python manage.py load_spr admin1CodesASCII.txt
 ```
 
 #### Cities
@@ -156,7 +150,7 @@ Download the file you want from the links above. They will be zip files that you
 must unzip before using. Then import the cities by running (for your downloaded
 file):
 
-`./env/bin/python manage.py load_cities cities15000.txt`
+`python manage.py load_cities cities15000.txt`
 
 ### Using docker
 
@@ -179,7 +173,7 @@ You can then connect to the container by going to localhost:8000
 
 You can import live event data into your "Searchable" table with this command:
 
-`./env/bin/python manage.py import https://gettogether.community/searchables/`
+`python manage.py import https://gettogether.community/searchables/`
 
 ## Getting Involved
 
