@@ -27,42 +27,29 @@ First, make sure you have [Git](https://git-scm.com/downloads) already installed
 
 It usually comes pre-installed in Mac and Linux but in Windows you need to run the installer available in the link above.
 
-### Install virtualenv
+### Install uv
 
-Also make sure you have [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html) in your computer by running:
-
-```bash
-virtualenv --version
-```
-
-If you get an error, use ```pip``` (included in Python3) with the following command:
+Also make sure you have [uv](https://docs.astral.sh/uv/getting-started/installation/) in your computer by running:
 
 ```bash
-pip install virtualenv
+uv version
 ```
 
 ### Configure your local repository
 
-If you haven't already, fork the project at <https://github.com/GetTogetherComm/GetTogether>
+If you haven't already, fork the project at <https://github.com/popey/GetTogether>
 
 Clone your forked repository in your computer (see detailed instructions [here](https://help.github.com/en/articles/cloning-a-repository)).
 
 Navigate to the repository's location using the command line: `cd GetTogether`
 
-Add <https://github.com/GetTogetherComm/GetTogether.git> to remote following [these instructions](https://help.github.com/en/articles/configuring-a-remote-for-a-fork).
+Add <https://github.com/popey/GetTogether.git> to remote following [these instructions](https://help.github.com/en/articles/configuring-a-remote-for-a-fork).
 
 ### Configure the virtual environment
 
-- If you have Python3 already configured as the default version for your computer, just run:
-
 ```bash
-virtualenv ./env
-```
-
-- But if your default is Python2, then run:
-
-```bash
-virtualenv --python=python3 ./env
+uv venv --python=3.9
+source .venv/bin/activate
 ```
 
 ### Install dependecies and migrate the database
@@ -70,15 +57,8 @@ virtualenv --python=python3 ./env
 - If you are in Mac or Linux:
 
 ```bash
-./env/bin/pip install -r requirements.txt
-./env/bin/python manage.py migrate
-```
-
-- If you are in Windows:
-
-```bash
-./env/Scripts/pip install -r requirements.txt
-./env/Scripts/python manage.py migrate
+uv pip install -r requirements.txt
+python manage.py migrate
 ```
 
 ### Rename the local_settings file
@@ -94,27 +74,13 @@ cp local_settings.example local_settings.py
 - If you're in Mac or Linux run:
 
 ```bash
-./env/bin/python manage.py createsuperuser
-```
-
-- If you are in Windows:
-
-```bash
-winpty ./env/Scripts/python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 ### Start the server
 
-- If you're in Mac or Linux run:
-
 ```bash
-./env/bin/python manage.py runserver
-```
-
-- If you're in Windows:
-
-```bash
-winpty ./env/Scripts/python manage.py runserver
+python manage.py runserver
 ```
 
 ## Installing pre-commit hooks
@@ -124,7 +90,7 @@ Pre-commit is a tool that helps us commiting better code. Before writing any cod
 - If you're using Mac or Linux, run:
 
 ```bash
-./env/bin/pre-commit install
+pre-commit install
 ```
 
 - If you're in Windows:
